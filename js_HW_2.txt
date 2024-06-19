@@ -1,0 +1,13 @@
+let result
+let pow = function (x,y) {
+    if (y == 0) {
+        console.log(result = 1)
+    } else {
+        result = x
+        for (let counter = 1; counter < y; counter++) {
+            result = result * x
+        }
+        console.log(result)
+    }
+}
+pow(2,3)
