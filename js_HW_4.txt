@@ -1,0 +1,22 @@
+let randomNumbers = []
+let evenNumbers = 0
+let oddNumbers = 0
+let checkProbabilityTheory = function(count){
+    for (let i = 0; i < count; i++){
+        let randomNumber = Math.floor(100 + Math.random() * (1000 + 1 - 100));
+        randomNumbers.push(randomNumber)
+        if (randomNumber%2 == 0){
+            evenNumbers = evenNumbers +1    
+        } else {
+            oddNumbers = oddNumbers +1
+        }
+    }
+let perOfEvenNumbers = evenNumbers / randomNumbers.length * 100
+let perOfOddNumbers = oddNumbers / randomNumbers.length * 100
+    console.log(randomNumbers)
+    console.log("Кількість згенерованих чисел: " + randomNumbers.length)
+    console.log ("Парних чисел: " + evenNumbers)
+    console.log ("Непарних чисел: " + oddNumbers)
+    console.log ("Відсоток парних до непарних: " + perOfEvenNumbers+"%"+perOfOddNumbers)
+}
+checkProbabilityTheory(11)
