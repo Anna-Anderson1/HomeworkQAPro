@@ -1,0 +1,45 @@
+var services = {
+    "стрижка": "60 грн",
+    "гоління": "80 грн",
+    "миття голови": "100 грн",
+    price: function (){
+        let sum = 0
+        for (let element in this){
+            servicePrice = Number.parseFloat(this[element])
+            if (isNaN(servicePrice)){
+                continue
+            } else {
+                sum = sum + Number.parseFloat(this[element])
+            }
+        } 
+        return "Загальна вартість послуг: " + sum
+    },
+    minPrice: function (){
+        let serviceName = Object.keys(this)[0]
+        let objVal = Object.values(this)
+        let servicePrice = Number.parseFloat(objVal[0])
+        for (let element in this){
+            if (Number.parseFloat(this[element]) < servicePrice){
+                servicePrice = Number.parseFloat(this[element])
+                serviceName = element
+            }
+        }
+        return "Мінімальна вартість послуги: " + serviceName + ": " + servicePrice
+    },
+    maxPrice: function (){
+        let serviceName = Object.keys(this)[0]
+        let objVal = Object.values(this)
+        let servicePrice = Number.parseFloat(objVal[0])
+        for (let element in this){
+            if (Number.parseFloat(this[element]) > servicePrice){
+                servicePrice = Number.parseFloat(this[element])
+                serviceName = element
+            }
+        }
+        return "Максимальна вартість послуги: " + serviceName + ": " + servicePrice
+    }
+}
+services['розбити скло'] = "200 грн"
+console.log(services.price())
+console.log(services.minPrice())
+console.log(services.maxPrice())

@@ -1,0 +1,16 @@
+let spells = {
+    alohamora: "unlocks doors",
+    lumos: "illuminates the tip of wand",
+    wingardiumLeviosa: "levitation spell",
+    expectoPatronum: "advanced protective spell",
+    getInfo: function (){
+        for (let element in this){
+            if (typeof this[element] !== 'function'){
+                console.log(element + ": " + this[element])
+            }
+        }
+    }
+}
+spells["avadaKedavra"] = "killing spell"
+spells.obliviate = "erases specific memories"
+spells.getInfo()
