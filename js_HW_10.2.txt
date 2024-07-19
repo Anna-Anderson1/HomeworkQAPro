@@ -1,0 +1,4 @@
+let words = "Wonderful, Happiness, Time, Task, Apple, Joyful, Banana, BeAutiful, flowers"
+let pattern = /\b[^aA\s,]{6,}\b/g
+let result = words.match(pattern)
+console.log(result)

@@ -1,0 +1,35 @@
+var arr = [
+    {
+        userName:"Test",
+        lastName:"Test",
+        email:"<test.test@gmail.com>"
+    },
+    {
+        userName:"Dmitro",
+        lastName:"Porohov",
+        email:"<dmitro.porohov@yahoo.com>"
+    },
+    {
+        userName:"Andrii",
+        lastName:"",
+        email:"<andrii@mail.ru>" // Нам такі не підходять
+    },
+    {
+        userName:"Anna",
+        lastName:"",
+        email:"<anna@yahoo.com>"
+    }
+];
+let validEmails = []
+let pattern = /^<(([a-zA-Z0-9]+)|([a-zA-z0-9]+\.{1}[a-zA-z0-9]+))@(gmail|yahoo)\.com>$/
+let myFunction = function (inputArray){
+    for (let element of inputArray){
+        let email = element.email
+        let validEmail = pattern.test(email)
+        if (validEmail){
+            validEmails.push(email)
+        }
+    }
+    console.log(validEmails)
+}
+myFunction(arr)
